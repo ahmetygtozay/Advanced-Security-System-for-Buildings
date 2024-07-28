@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "author": "Khaled Hany",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 73.4,
+      "left": -124.8,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -293.6, "left": 98.22, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -178.97, "left": -12.8, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -174.8, "left": 364.8, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 77.56, "left": -38.4, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -30.8, "left": 418.4, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -45.6,
+      "left": -199.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -101.65,
+      "left": -172.8,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -57.6, "left": -240.6, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 253.6,
+      "left": -56.5,
+      "attrs": { "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:K", "uno:GND.1", "black", [ "v9.6", "h-48" ] ],
+    [ "lcd1:A", "uno:5V", "red", [ "v19.2", "h143.9", "v96", "h0", "v182.4", "h-134.4" ] ],
+    [ "lcd1:D7", "uno:7", "gray", [ "v28.8", "h48.3" ] ],
+    [ "lcd1:D6", "uno:8", "gold", [ "v28.8", "h38.6" ] ],
+    [ "lcd1:D5", "uno:9", "#8f4814", [ "v28.8", "h28.9" ] ],
+    [ "lcd1:RW", "uno:GND.1", "black", [ "v19.2", "h-0.1" ] ],
+    [ "lcd1:VSS", "uno:GND.1", "black", [ "v19.2", "h96" ] ],
+    [ "lcd1:VDD", "uno:5V", "red", [ "v19.2", "h-38.3", "v240", "h169" ] ],
+    [ "lcd1:RS", "uno:12", "blue", [ "v28.8", "h86.7" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v9.6", "h-144", "v403.2", "h169" ] ],
+    [ "pir1:GND", "uno:GND.1", "black", [ "v9.6", "h134.14", "v153.6", "h-172.5" ] ],
+    [ "pir1:OUT", "uno:1", "violet", [ "v28.8", "h134.26", "v115.2", "h-28.8" ] ],
+    [ "servo1:V+", "uno:5V", "red", [ "h-38.4", "v326.5", "h-153.6" ] ],
+    [ "servo1:GND", "uno:GND.1", "black", [ "h-67.2", "v115.2", "h-153.6" ] ],
+    [ "servo1:PWM", "uno:6", "orange", [ "h-48", "v86.6", "h-115.2" ] ],
+    [ "btn1:2.r", "vcc1:VCC", "red", [ "h0" ] ],
+    [ "btn1:1.l", "uno:13", "limegreen", [ "v-96", "h249.2" ] ],
+    [ "keypad1:R1", "uno:5", "blue", [ "v19.2", "h-115.2", "v-364.8", "h-201.6", "v47.4" ] ],
+    [ "keypad1:R2", "uno:4", "green", [ "v28.8", "h-134.8", "v-364.8", "h-176.1" ] ],
+    [
+      "keypad1:R3",
+      "uno:3",
+      "purple",
+      [ "v38.4", "h-153.9", "v-220.8", "h0", "v-144", "h-153.6" ]
+    ],
+    [ "keypad1:C1", "uno:A3", "cyan", [ "v57.6", "h-48.1" ] ],
+    [ "keypad1:C2", "uno:A2", "gray", [ "v67.2", "h-339.4" ] ],
+    [ "keypad1:C3", "uno:A1", "orange", [ "v76.8", "h-358.65" ] ],
+    [ "keypad1:C4", "uno:A0", "violet", [ "v86.4", "h-377.9" ] ],
+    [ "bz1:2", "uno:A4", "purple", [ "v182.4", "h422" ] ],
+    [ "bz1:1", "uno:GND.2", "black", [ "v201.6", "h341.7" ] ],
+    [ "lcd1:D4", "uno:10", "green", [ "v28.8", "h38.4" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v48", "h76.8" ] ],
+    [ "keypad1:R4", "uno:A5", "yellow", [ "v48", "h-297.8" ] ],
+    [ "r1:2", "btn1:1.l", "green", [ "v0" ] ],
+    [ "r1:1", "gnd1:GND", "green", [ "v0" ] ],
+    [ "rgb1:G", "uno:0", "green", [ "v48", "h394.9", "v-336" ] ],
+    [ "rgb1:R", "uno:2", "red", [ "v86.4", "h326.4", "v-384" ] ],
+    [ "rgb1:COM", "uno:GND.2", "black", [ "v57.2", "h207.4" ] ]
+  ],
+  "dependencies": {}
+}
